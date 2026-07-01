@@ -51,20 +51,26 @@ Server** (VS Code) agar path relatif dimuat dengan sempurna.
 
 ## Cara Mengelola Proyek dengan Git & GitHub
 
+Folder proyek ini **sudah diinisialisasi sebagai Git repository** (branch
+`main`, dengan 1 commit awal berisi seluruh file). Anda hanya perlu
+menghubungkannya ke GitHub:
+
 1. Buat repository baru di GitHub (misalnya bernama `sistem-layanan-mahasiswa`),
-   kosongkan (tanpa README) agar tidak bentrok saat push pertama.
+   **kosongkan** (jangan centang "Add README") agar tidak bentrok saat push
+   pertama.
 2. Di dalam folder proyek ini, jalankan perintah berikut lewat terminal:
 
    ```bash
-   git init
-   git add .
-   git commit -m "Initial commit: sistem layanan mahasiswa"
-   git branch -M main
    git remote add origin https://github.com/USERNAME/sistem-layanan-mahasiswa.git
    git push -u origin main
    ```
 
    Ganti `USERNAME` dengan username GitHub Anda.
+
+   > Jika Anda lebih suka memulai dari nol (tanpa riwayat commit yang sudah
+   > ada), hapus folder `.git` lalu jalankan `git init`, `git add .`,
+   > `git commit -m "Initial commit"`, `git branch -M main`, baru lanjutkan
+   > langkah `git remote add origin` di atas.
 
 3. Untuk perubahan berikutnya, gunakan alur kerja standar:
 
