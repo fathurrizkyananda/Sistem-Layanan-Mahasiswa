@@ -1,13 +1,3 @@
-/**
- * table.js
- * ---------------------------------------------------------
- * Logika untuk halaman tabel data (data.html):
- *  1. Menampilkan seluruh data dari storage.js ke dalam tabel
- *  2. Fitur pencarian sederhana (berdasarkan nama/NIM)
- *  3. Hapus data per baris & hapus semua data
- * ---------------------------------------------------------
- */
-
 document.addEventListener("DOMContentLoaded", () => {
   const tbody = document.getElementById("table-body");
   const emptyState = document.getElementById("empty-state");

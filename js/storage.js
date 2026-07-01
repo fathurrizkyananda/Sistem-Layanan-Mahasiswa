@@ -1,21 +1,3 @@
-/**
- * storage.js
- * ---------------------------------------------------------
- * Modul untuk mengelola penyimpanan data layanan mahasiswa
- * menggunakan Web Storage API (localStorage).
- *
- * Dipakai bersama oleh:
- *  - form.js  (halaman input, index.html)
- *  - table.js (halaman tabel data, data.html)
- *
- * Catatan: localStorage bersifat per-browser/per-perangkat.
- * Untuk skenario multi-pengguna nyata, data ini sebaiknya
- * dipindahkan ke backend/database, namun untuk kebutuhan
- * tugas ini localStorage sudah cukup untuk mendemonstrasikan
- * alur input -> proses -> tampil.
- * ---------------------------------------------------------
- */
-
 const STORAGE_KEY = "slm_data"; // key penyimpanan array data layanan
 const COUNTER_KEY = "slm_counter"; // key penomoran tiket berurutan
 

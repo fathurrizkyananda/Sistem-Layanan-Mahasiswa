@@ -1,13 +1,3 @@
-/**
- * form.js
- * ---------------------------------------------------------
- * Logika untuk halaman input (index.html):
- *  1. Validasi isian form
- *  2. Menyimpan data lewat storage.js
- *  3. Menampilkan tiket konfirmasi setelah data berhasil disimpan
- * ---------------------------------------------------------
- */
-
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("form-layanan");
   const errorBox = document.getElementById("form-error");
