@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tabel Data — Sistem Layanan Mahasiswa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark">SL</span>
+        <span class="brand__text">Sistem Layanan Mahasiswa</span>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html" class="site-nav__link">Form Input</a>
+        <a href="data.html" class="site-nav__link is-active">Tabel Data</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="table-page">
+    <div class="table-page__header">
+      <div>
+        <h1>Data Layanan Mahasiswa</h1>
+        <p class="muted">
+          Total data: <strong id="stat-total">0</strong> pengajuan
+        </p>
+      </div>
+      <div class="table-toolbar">
+        <input
+          type="search"
+          id="search-input"
+          placeholder="Cari nama atau NIM…"
+          aria-label="Cari data"
+        />
+        <button id="btn-clear-all" class="btn btn-danger-outline">
+          Hapus Semua
+        </button>
+      </div>
+    </div>
+
+    <div id="table-wrapper" class="table-wrapper" hidden>
+      <table>
+        <thead>
+          <tr>
+            <th>No. Tiket</th>
+            <th>Nama</th>
+            <th>NIM</th>
+            <th>Jenis Layanan</th>
+            <th>Keterangan</th>
+            <th>Waktu</th>
+            <th aria-label="Aksi"></th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+
+    <div id="empty-state" class="empty-state">
+      <p>Belum ada data layanan. Silakan isi form terlebih dahulu.</p>
+      <a href="index.html" class="btn btn-primary">Isi Form Sekarang</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Dibuat untuk tugas SUB-CPMK-07-2-8 — Integrasi HTML, CSS, JavaScript &amp; Git.</p>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/table.js"></script>
+</body>
+</html>

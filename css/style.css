@@ -1,0 +1,645 @@
+/* =========================================================
+   Sistem Layanan Mahasiswa — Stylesheet
+   Tema: "Loket Digital" — terinspirasi dari tiket antrean
+   layanan di loket kampus.
+   ========================================================= */
+
+:root {
+  /* Warna */
+  --ink: #1b2430;
+  --ink-soft: #5b6472;
+  --paper: #ffffff;
+  --bg: #eef1f4;
+  --navy: #22406b;
+  --navy-deep: #182c4b;
+  --amber: #d98e04;
+  --amber-soft: #fbeed2;
+  --sage: #2f7d5c;
+  --sage-soft: #e2f2ea;
+  --danger: #b23a3a;
+  --line: #dde2e8;
+
+  /* Tipografi */
+  --font-display: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+
+  /* Lainnya */
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 8px 24px rgba(24, 44, 75, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  margin: 0;
+  color: var(--navy-deep);
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+}
+
+/* ---------- Header & Navigasi ---------- */
+
+.site-header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-header__inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--navy-deep);
+}
+
+.brand__mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  background: var(--navy);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.brand__text {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.site-nav {
+  display: flex;
+  gap: 4px;
+}
+
+.site-nav__link {
+  text-decoration: none;
+  color: var(--ink-soft);
+  font-weight: 500;
+  font-size: 0.92rem;
+  padding: 8px 14px;
+  border-radius: 999px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.site-nav__link:hover {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.site-nav__link.is-active {
+  background: var(--navy);
+  color: #fff;
+}
+
+/* ---------- Layout halaman Form ---------- */
+
+.layout {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 40px 24px 64px;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.info-panel {
+  background: linear-gradient(165deg, var(--navy) 0%, var(--navy-deep) 100%);
+  color: #eaf0f8;
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  position: sticky;
+  top: 88px;
+}
+
+.info-panel__eyebrow {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  color: var(--amber);
+  margin: 0 0 12px;
+}
+
+.info-panel__title {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  color: #fff;
+}
+
+.info-panel__desc {
+  font-size: 0.92rem;
+  color: #c4d1e3;
+  margin: 14px 0 26px;
+}
+
+.info-panel__stats {
+  margin: 0 0 26px;
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.info-panel__stats dt {
+  font-size: 0.78rem;
+  color: #a9bbd4;
+}
+
+.info-panel__stats dd {
+  margin: 4px 0 0;
+  font-family: var(--font-mono);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--amber);
+}
+
+.info-panel__label {
+  font-size: 0.78rem;
+  color: #a9bbd4;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.info-panel__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-panel__list li {
+  font-size: 0.88rem;
+  padding: 9px 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border-left: 2px solid var(--amber);
+  border-radius: 4px;
+  color: #dde6f2;
+}
+
+/* ---------- Kartu Form ---------- */
+
+.form-card {
+  background: var(--paper);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow);
+}
+
+.form-card__title {
+  font-size: 1.3rem;
+}
+
+.form-card__subtitle {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  margin: 6px 0 24px;
+}
+
+.form-error {
+  background: #fbeaea;
+  border: 1px solid #f0c6c6;
+  color: var(--danger);
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  margin-bottom: 18px;
+}
+
+.field {
+  margin-bottom: 18px;
+}
+
+.field label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 11px 13px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--navy);
+  background: var(--paper);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* ---------- Tombol ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 22px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.1s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: var(--navy);
+  color: #fff;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background: var(--navy-deep);
+}
+
+.btn-secondary {
+  background: var(--amber-soft);
+  color: #7a5504;
+  margin-top: 14px;
+}
+
+.btn-secondary:hover {
+  background: #f6e2b0;
+}
+
+.btn-danger-outline {
+  background: transparent;
+  color: var(--danger);
+  border-color: #e3bcbc;
+}
+
+.btn-danger-outline:hover {
+  background: #fbeaea;
+}
+
+/* ---------- Tiket Konfirmasi (elemen signature) ---------- */
+
+.ticket-confirmation {
+  margin-top: 28px;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ticket-stub {
+  position: relative;
+  background: var(--bg);
+  border: 1px dashed #b9c3d0;
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  text-align: center;
+}
+
+.ticket-stub::before,
+.ticket-stub::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ticket-stub::before {
+  left: -11px;
+}
+
+.ticket-stub::after {
+  right: -11px;
+}
+
+.ticket-label {
+  margin: 0;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+}
+
+.ticket-number {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin: 4px 0 16px;
+  letter-spacing: 0.03em;
+}
+
+.ticket-detail {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 14px;
+  text-align: left;
+  max-width: 320px;
+  margin: 0 auto 18px;
+  padding-top: 16px;
+  border-top: 1px dashed #b9c3d0;
+}
+
+.ticket-detail dt {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+.ticket-detail dd {
+  margin: 0;
+  font-size: 0.86rem;
+  font-weight: 500;
+}
+
+/* ---------- Halaman Tabel ---------- */
+
+.table-page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 40px 24px 64px;
+}
+
+.table-page__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.table-page__header h1 {
+  font-size: 1.5rem;
+}
+
+.muted {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  margin: 6px 0 0;
+}
+
+.table-toolbar {
+  display: flex;
+  gap: 10px;
+}
+
+.table-toolbar input[type="search"] {
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  min-width: 220px;
+  background: var(--paper);
+}
+
+.table-toolbar input[type="search"]:focus {
+  outline: none;
+  border-color: var(--navy);
+}
+
+.table-wrapper {
+  background: var(--paper);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+}
+
+thead th {
+  text-align: left;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+tbody td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.88rem;
+  vertical-align: top;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: var(--bg);
+}
+
+.ticket-badge {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--navy);
+  background: #e7ecf3;
+  padding: 4px 9px;
+  border-radius: 6px;
+  border-left: 3px solid var(--amber);
+  white-space: nowrap;
+}
+
+.pill {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--sage);
+  background: var(--sage-soft);
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.btn-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--danger);
+  cursor: pointer;
+  font-size: 0.85rem;
+  line-height: 1;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-icon:hover {
+  background: #fbeaea;
+  border-color: #e3bcbc;
+}
+
+.empty-state {
+  background: var(--paper);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  padding: 56px 24px;
+  text-align: center;
+  color: var(--ink-soft);
+}
+
+.empty-state p {
+  margin: 0 0 18px;
+}
+
+.empty-state .btn {
+  display: inline-flex;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  padding: 24px;
+}
+
+/* ---------- Responsif ---------- */
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .info-panel {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-header__inner {
+    padding: 14px 18px;
+  }
+
+  .brand__text {
+    font-size: 0.92rem;
+  }
+
+  .layout,
+  .table-page {
+    padding: 24px 16px 48px;
+  }
+
+  .form-card {
+    padding: 22px;
+  }
+
+  .table-page__header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .table-toolbar {
+    flex-direction: column;
+  }
+
+  .table-toolbar input[type="search"] {
+    min-width: 0;
+  }
+
+  .ticket-number {
+    font-size: 1.6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

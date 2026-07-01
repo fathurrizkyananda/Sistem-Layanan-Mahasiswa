@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Layanan — Sistem Layanan Mahasiswa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark">SL</span>
+        <span class="brand__text">Sistem Layanan Mahasiswa</span>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html" class="site-nav__link is-active">Form Input</a>
+        <a href="data.html" class="site-nav__link">Tabel Data</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="info-panel">
+      <p class="info-panel__eyebrow">Loket Digital</p>
+      <h1 class="info-panel__title">Ajukan layanan akademik Anda di sini.</h1>
+      <p class="info-panel__desc">
+        Lengkapi form di samping untuk mencatat pengajuan layanan. Setiap
+        pengajuan akan mendapat nomor tiket, dan seluruh data dapat dilihat
+        pada halaman Tabel Data.
+      </p>
+
+      <dl class="info-panel__stats">
+        <div>
+          <dt>Total layanan tercatat</dt>
+          <dd id="stat-total">0</dd>
+        </div>
+      </dl>
+
+      <p class="info-panel__label">Jenis layanan yang tersedia</p>
+      <ul class="info-panel__list">
+        <li>Legalisir Dokumen</li>
+        <li>Surat Keterangan Aktif Kuliah</li>
+        <li>Pengajuan Cuti Akademik</li>
+        <li>Konsultasi Akademik</li>
+      </ul>
+    </aside>
+
+    <section class="form-card">
+      <h2 class="form-card__title">Form Pengajuan Layanan</h2>
+      <p class="form-card__subtitle">
+        Lengkapi seluruh kolom di bawah ini dengan data yang benar.
+      </p>
+
+      <div id="form-error" class="form-error" hidden></div>
+
+      <form id="form-layanan" novalidate>
+        <div class="field">
+          <label for="nama">Nama Lengkap</label>
+          <input
+            type="text"
+            id="nama"
+            name="nama"
+            placeholder="cth. Siti Aisyah"
+            autocomplete="name"
+          />
+        </div>
+
+        <div class="field">
+          <label for="nim">NIM</label>
+          <input
+            type="text"
+            id="nim"
+            name="nim"
+            placeholder="cth. 2210512045"
+            inputmode="numeric"
+          />
+        </div>
+
+        <div class="field">
+          <label for="jenisLayanan">Jenis Layanan</label>
+          <select id="jenisLayanan" name="jenisLayanan">
+            <option value="" selected disabled>Pilih jenis layanan…</option>
+            <option value="Legalisir Dokumen">Legalisir Dokumen</option>
+            <option value="Surat Keterangan Aktif Kuliah">
+              Surat Keterangan Aktif Kuliah
+            </option>
+            <option value="Pengajuan Cuti Akademik">
+              Pengajuan Cuti Akademik
+            </option>
+            <option value="Konsultasi Akademik">Konsultasi Akademik</option>
+            <option value="Lainnya">Lainnya</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="keterangan">Keterangan</label>
+          <textarea
+            id="keterangan"
+            name="keterangan"
+            rows="4"
+            placeholder="Jelaskan keperluan Anda secara singkat…"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Ajukan Layanan</button>
+      </form>
+
+      <div
+        id="ticket-confirmation"
+        class="ticket-confirmation"
+        hidden
+      ></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Dibuat untuk tugas SUB-CPMK-07-2-8 — Integrasi HTML, CSS, JavaScript &amp; Git.</p>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/form.js"></script>
+</body>
+</html>

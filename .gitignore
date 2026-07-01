@@ -1,0 +1,10 @@
+# Sistem file OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.log
+
+# Jika di kemudian hari menambahkan tooling Node.js
+node_modules/
